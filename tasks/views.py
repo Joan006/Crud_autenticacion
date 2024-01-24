@@ -1,8 +1,7 @@
-from unicodedata import name
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.db import IntegrityError
 
 
@@ -47,3 +46,6 @@ def signup(request):
 
 def tasks(request):
     return render(request, "tasks.html")
+
+def signup(request):
+    logout(request)
